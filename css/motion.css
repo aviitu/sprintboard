@@ -1,0 +1,92 @@
+/* ---------- movimento ---------- */
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes pop{from{opacity:0;transform:scale(.96) translateY(6px)}to{opacity:1;transform:none}}
+@keyframes popOn{0%{transform:scale(.92)}60%{transform:scale(1.04)}100%{transform:scale(1)}}
+@keyframes pulseRing{0%{box-shadow:0 0 0 0 var(--accent-soft)}100%{box-shadow:0 0 0 10px transparent}}
+button{transition:background-color .15s,border-color .15s,color .15s,transform .12s,box-shadow .15s,filter .15s}
+button:not(:disabled):active{transform:scale(.97)}
+button.pri:not(:disabled):hover{filter:brightness(1.08);box-shadow:0 3px 10px rgba(0,0,0,.18)}
+.tabs button{transition:background-color .2s,color .2s}
+textarea,input[type=text],input[type=url],select{transition:border-color .15s,box-shadow .15s,background-color .2s}
+textarea:focus,input[type=text]:focus,input[type=url]:focus,select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.act{transition:background-color .15s,border-color .15s,transform .15s}
+.act:hover{transform:translateX(2px)}
+.dot{transition:background-color .3s}
+.pill{transition:background-color .25s,color .25s}
+.card{transition:border-color .2s,box-shadow .2s}
+.cen .claude{transition:border-color .2s,box-shadow .2s}
+.cen:hover .claude{box-shadow:0 4px 14px rgba(0,0,0,.08)}
+.cenx{transition:background-color .2s}
+.evcard,.prints .th,.ev{transition:transform .15s,border-color .15s,box-shadow .15s}
+.evcard:hover,.prints .th:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.14)}
+.ev:hover{border-color:var(--accent)}
+.codebox{transition:border-color .15s}.codebox:hover{border-color:var(--accent)}
+.modal:not([hidden]),.ask:not([hidden]){animation:fadeIn .18s ease-out}
+.modal:not([hidden]) .box,.ask:not([hidden]) .askbox{animation:pop .24s cubic-bezier(.2,.7,.2,1)}
+.busy:not([hidden]){animation:rise .22s ease-out}
+details>summary{transition:color .15s}
+.trecho,.verdict,.rprop{animation:rise .25s ease-out both}
+@keyframes flashUpd{0%{box-shadow:0 0 0 2px var(--accent)}100%{box-shadow:0 0 0 0 transparent}}
+.fx-new{animation:rise .35s cubic-bezier(.2,.7,.2,1) both}
+.fx-upd{animation:flashUpd 1.2s ease-out;border-radius:var(--r)}
+.cen.fx-upd .claude,.balloon.fx-upd .bub{animation:flashUpd 1.2s ease-out}
+.cen.fx-upd,.balloon.fx-upd{animation:none}
+.cenx.fx-upd>summary{animation:flashUpd 1.2s ease-out;border-radius:8px}
+.cenx.fx-upd,.cenx.fx-new{animation:none}
+.pane.enter>*{animation:rise .36s cubic-bezier(.2,.7,.2,1) both}
+.pane.enter>*:nth-child(2){animation-delay:.04s}.pane.enter>*:nth-child(3){animation-delay:.08s}.pane.enter>*:nth-child(4){animation-delay:.12s}.pane.enter>*:nth-child(n+5){animation-delay:.16s}
+.list.enter>*{animation:rise .3s cubic-bezier(.2,.7,.2,1) both}
+.ic{transition:border-color .15s,background-color .15s}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+button.who{border:0;background:transparent;border-radius:999px;padding:4px 10px 4px 4px;min-height:36px;position:relative}
+button.who:hover{background:var(--sunk);border-color:transparent}
+button.who[aria-expanded=true]{background:var(--sunk)}
+.pvdot{position:absolute;left:20px;top:20px;width:16px;height:16px;border-radius:50%;background:var(--fg);color:var(--bg);display:grid;place-items:center;box-shadow:0 0 0 2px var(--surface)}
+.pvdot svg{width:10px;height:10px}
+.prof{position:fixed;z-index:35;top:calc(58px + env(safe-area-inset-top,0px));right:max(16px,env(safe-area-inset-right,0px));width:min(320px,calc(100vw - 32px));background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 40px rgba(0,0,0,.18),0 2px 8px rgba(0,0,0,.08);padding:20px 16px 12px;display:grid;gap:14px;transform-origin:top right}
+.prof:not([hidden]){animation:pop .2s cubic-bezier(.2,.7,.2,1)}
+.prof .pid{display:grid;justify-items:center;gap:6px;text-align:center}
+.prof .pid .avatar{width:64px;height:64px}
+.prof .pid .avatar.ph svg{width:42px;height:42px}
+.prof .pid b{font-size:17px}
+.prof hr{border:0;border-top:1px solid var(--line);margin:0}
+.pid b.pname{cursor:default;user-select:none;-webkit-user-select:none}
+.pfav{display:flex;align-items:center;gap:8px;max-width:100%;margin-top:2px;padding:7px 12px;border-radius:14px;background:var(--accent-soft);color:var(--accent);animation:pop .3s cubic-bezier(.2,.7,.2,1)}
+.pfav .eq{display:inline-flex;align-items:flex-end;gap:2px;height:14px;flex:none}
+.pfav .eq i{width:3px;border-radius:2px;background:currentColor;height:40%;animation:eq .9s ease-in-out infinite alternate}
+.pfav .eq i:nth-child(2){animation-duration:.7s;animation-delay:-.3s}.pfav .eq i:nth-child(3){animation-duration:1.1s;animation-delay:-.6s}.pfav .eq i:nth-child(4){animation-duration:.8s;animation-delay:-.15s}
+@keyframes eq{0%{height:20%}50%{height:100%}100%{height:45%}}
+.pfav .ftx{font-size:13px;font-style:italic;color:var(--fg);outline:none;min-width:40px;text-align:left;overflow-wrap:anywhere;border-radius:4px}
+.pfav .ftx:empty::before{content:attr(data-ph);color:var(--muted)}
+.pfav .ftx:focus{box-shadow:0 0 0 2px var(--accent-soft)}
+.pvrow{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:4px 12px;align-items:center;padding:4px 4px 6px;cursor:pointer}
+.pvrow .pic{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;background:var(--sunk);color:var(--fg)}
+.pvrow .pic svg{width:18px;height:18px}
+.pvrow .pt{font-weight:600}
+.pvrow .pd{grid-column:2/4;font-size:12px;color:var(--muted)}
+.sw{appearance:none;-webkit-appearance:none;width:51px;height:31px;border-radius:999px;background:var(--idle-soft);position:relative;cursor:pointer;border:0;padding:0;transition:background-color .2s;flex:none}
+.sw::after{content:"";position:absolute;top:2px;left:2px;width:27px;height:27px;border-radius:50%;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.2);transition:transform .22s cubic-bezier(.2,.7,.2,1)}
+.sw[aria-checked=true]{background:var(--ok)}
+.sw[aria-checked=true]::after{transform:translateX(20px)}
+body.priv .pv,body.priv :is(#screen,#side,#pane,#modal,#ask,#crumbs) :is(textarea,input[type=text],input[type=url],img,video,iframe,pre,select),body.priv #sprintSel{filter:blur(.36em)}
+body.priv :is(#screen,#side,#pane,#modal,#ask) :is(img,video,iframe){filter:blur(14px)}
+@media (prefers-reduced-motion:reduce){.sw::after{transition:none}}
+
+/* fechar uma aba: estoura como um pop */
+.atab{position:relative}
+.atab.popx{pointer-events:none;animation:tabPop .24s cubic-bezier(.3,.1,.5,1) forwards}
+@keyframes tabPop{0%{transform:scale(1)}35%{transform:scale(1.14);opacity:1}100%{transform:scale(.2);opacity:0}}
+.tpart{position:fixed;z-index:80;width:7px;height:7px;margin:-3.5px 0 0 -3.5px;border-radius:50%;background:var(--accent);pointer-events:none;animation:tBurst .5s cubic-bezier(.15,.7,.3,1) forwards}
+.tpart.tp2{background:var(--muted);width:5px;height:5px}
+@keyframes tBurst{0%{transform:translate(0,0) scale(var(--s));opacity:1}70%{opacity:1}100%{transform:translate(var(--dx),var(--dy)) scale(0);opacity:0}}
+/* diálogo saindo */
+.modal.mghost{pointer-events:none;animation:mgOut .2s ease-in forwards}.modal.mghost .box{animation:mgBox .2s ease-in forwards}
+@keyframes mgOut{to{opacity:0}}@keyframes mgBox{to{transform:translateY(6px) scale(.97)}}
+/* card que acabou de mudar de coluna no kanban */
+.kcard.kland{animation:kLand .55s cubic-bezier(.2,.8,.2,1)}
+@keyframes kLand{0%{transform:scale(.94);box-shadow:0 0 0 3px var(--accent-soft)}60%{transform:scale(1.02)}100%{transform:none;box-shadow:none}}
+/* aba nova chegando */
+.atab.tin{animation:tabIn .32s cubic-bezier(.2,.8,.2,1)}
+@keyframes tabIn{from{opacity:0;transform:translateY(6px) scale(.92)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.kcard.kland,.atab.tin,.modal.mghost,.modal.mghost .box{animation:none}}

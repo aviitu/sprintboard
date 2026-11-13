@@ -1,0 +1,110 @@
+/* ===== Thinker ===== */
+.tkempty{display:grid;gap:10px;justify-items:center;padding:40px 24px}
+.tkgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,360px);gap:20px;align-items:start}
+.tkctx{display:grid;gap:16px}
+.tkctx textarea{font-family:var(--serif);font-size:15px;line-height:1.6;min-height:220px}
+.tkside{display:grid;gap:16px}
+.tkside .card{padding:20px}
+.tkfs{list-style:none;margin:0 0 12px;padding:0;display:grid;gap:6px}
+.tkfs li{display:flex;align-items:center;gap:8px;font-size:13px;border-bottom:1px solid var(--line);padding-bottom:6px}
+.tkrefs{display:grid;gap:6px;max-height:220px;overflow:auto}
+.tkfoot{display:flex;align-items:center;gap:12px;margin-top:16px}
+.tkround{display:grid;gap:18px}
+.tkq{border:0;margin:0;padding:0 0 16px;border-bottom:1px solid var(--line);display:grid;gap:10px}
+.tkq:last-of-type{border-bottom:0}
+.tkq legend{display:flex;gap:10px;align-items:baseline;font-weight:600;font-size:15px;padding:0;margin-bottom:6px}
+.tkqn{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--sunk);font-size:12px;flex:none}
+.tkqt{margin:0;font-family:var(--serif);font-size:14.5px;color:var(--muted);max-width:72ch}
+.tkopts{display:grid;gap:6px}
+.tkopt{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);cursor:pointer;transition:border-color .15s,background-color .15s}
+.tkopt:hover{border-color:color-mix(in srgb,var(--fg) 35%,var(--line))}
+.tkopt.on{border-color:#D97757;background:var(--accent-soft)}
+.tkopt input[type=radio],.tkopt input[type=checkbox]{margin-top:3px;accent-color:#D97757}
+.tkrec{font-size:11px;font-weight:600;color:var(--accent);margin-left:6px;white-space:nowrap}
+.tkother input[type=text]{flex:1;border:0;background:transparent;padding:0}
+.tkqa{display:grid;gap:10px;margin-top:12px}
+.tkreq textarea{font-family:var(--serif);font-size:15px;line-height:1.6;margin-top:12px}
+.tkadj{margin-top:10px}
+.tkatv{display:grid;grid-template-columns:minmax(240px,320px) minmax(0,1fr);gap:20px;align-items:start}
+.tklist{display:grid;gap:4px;position:sticky;top:calc(118px + env(safe-area-inset-top,0px));max-height:calc(100vh - 140px);overflow:auto}
+.tkli{display:grid;gap:2px;text-align:left;border:1px solid transparent;background:transparent;border-radius:10px;padding:10px 12px}
+.tkli:hover{background:var(--sunk);border-color:transparent}
+.tkli.on{background:var(--surface);border-color:var(--line)}
+.tkli-t{font-weight:500;line-height:1.35}
+.tkadd{display:inline-flex;gap:6px;align-items:center;justify-self:start;margin-top:4px}.tkadd .ico{width:16px;height:16px}
+.tkdet{display:grid;gap:14px}
+.tktit{font:600 20px/1.3 var(--sans);border:0;background:transparent;padding:0;width:100%;letter-spacing:-.01em}
+.tktit:focus{outline:none;border-bottom:1px solid var(--line)}
+.tkacts button{display:inline-flex;align-items:center;gap:6px}.tkacts .ico{width:16px;height:16px}
+.tkdeps{display:flex;gap:4px 10px;flex-wrap:wrap;align-items:center}
+.tkdep{gap:4px}
+.tksec{border-top:1px solid var(--line);padding-top:14px;display:grid;gap:8px}
+.tksech{display:flex;align-items:center;gap:8px}
+.tksech b{font-size:12.5px;letter-spacing:.02em}
+.tkbody{font-family:var(--serif);font-size:15px;line-height:1.62;max-width:78ch}
+.tkbody p{margin:0 0 8px}.tkbody ul{margin:0 0 8px;padding-left:22px}.tkbody li{margin:2px 0}
+.tkcode{font:12.5px/1.55 var(--mono);background:var(--sunk);border-radius:10px;padding:12px 14px;overflow:auto;white-space:pre;margin:0}
+.tksec textarea.mono,textarea.mono{font-family:var(--mono);font-size:12.5px}
+.tkpbox{max-width:min(1200px,96vw)!important;width:96vw;height:92vh;grid-template-rows:auto minmax(0,1fr) auto}
+.tkpbox button{display:inline-flex;align-items:center;gap:6px}.tkpbox .ico{width:16px;height:16px}
+.tkframe{width:100%;height:100%;border:1px solid var(--line);border-radius:10px;background:#fff}
+.tksis{gap:6px}.chipbtn.on{background:var(--pri);color:var(--pri-ink);border-color:var(--pri)}
+.tkkit{display:grid;gap:10px}
+.tksteps{margin:0;padding-left:20px;display:grid;gap:4px}
+.tksnip{display:flex;gap:8px;align-items:flex-start;background:var(--sunk);border-radius:10px;padding:10px 12px}
+.tksnip code{font:11.5px/1.5 var(--mono);flex:1;overflow-wrap:anywhere}
+.tkkbl{display:grid;gap:4px;max-height:52vh;overflow:auto}
+.tkkbi{display:flex;gap:10px;align-items:flex-start;text-align:left;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent;padding:10px 4px}
+.tkkbi:hover{background:var(--sunk)}
+.tkkbi .grow{display:grid;gap:2px}
+.tkkbc{color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tkkbf{padding:16px}
+@media (max-width:900px){.tkgrid,.tkatv{grid-template-columns:minmax(0,1fr)}.tklist{position:static;max-height:none}}
+.tkbar{margin-bottom:12px;gap:10px}
+.tklh{padding:10px 12px 2px;font-weight:500}
+.tkref .tkli-t{color:var(--muted)}
+.tkimpl{display:grid;max-height:56vh;overflow:auto}
+
+/* ===== grau de detalhe: barra + tela em branco sendo montada ===== */
+.tkdl{display:grid;gap:10px;padding:14px;border:1px solid var(--line);border-radius:14px;background:var(--sunk)}
+.tkdlh{display:flex;align-items:baseline;gap:10px}.tkdlh label{flex:1}
+.tkdlv{font-size:13px;font-weight:600;color:var(--accent)}
+.tkdlg{display:grid;grid-template-columns:176px minmax(0,1fr);gap:16px;align-items:center}
+.tkdlr{display:grid;gap:6px}
+.tkdlr input[type=range]{width:100%;accent-color:var(--accent);min-height:28px}
+.tkdlt{display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted)}
+.tkdlr p{margin:0;min-height:2.8em}
+.tkmock{width:176px;height:118px;border-radius:10px;background:var(--surface);border:1px solid var(--line);box-shadow:0 6px 18px rgba(20,20,19,.08);overflow:hidden;display:grid;grid-template-rows:18px 1fr}
+.tkmbar{display:flex;gap:4px;align-items:center;padding:0 8px;border-bottom:1px solid var(--line)}.tkmbar i{width:6px;height:6px;border-radius:50%;background:var(--line)}
+.tkmbody{position:relative;padding:8px}
+.tkmock .mb{position:absolute;left:10px;height:8px;border-radius:4px;background:color-mix(in srgb,var(--fg) 14%,transparent);transform-origin:left center;opacity:0;transform:scaleX(.2);transition:opacity .28s ease,transform .38s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i)*35ms)}
+.mb-t{top:10px;width:58%;height:10px!important;background:color-mix(in srgb,var(--fg) 26%,transparent)!important}
+.mb-l1{top:26px;width:82%}.mb-l2{top:38px;width:66%}
+.mb-in{top:52px;width:40%;height:14px!important;border:1px solid var(--line);background:var(--bg)!important}.mb-in2{top:52px;left:auto!important;right:10px;width:40%;height:14px!important;border:1px solid var(--line);background:var(--bg)!important;transform-origin:right center}
+.mb-tb{top:74px;width:56%;height:6px!important}.mb-tb2{top:84px;width:56%;height:6px!important}
+.mb-bt{top:76px;left:auto!important;right:10px;width:34px;height:14px!important;background:var(--accent)!important;transform-origin:right center}
+.tkmock.lv-1 .mb-t,.tkmock.lv-1 .mb-l1,
+.tkmock.lv-2 .mb:is(.mb-t,.mb-l1,.mb-l2,.mb-in),
+.tkmock.lv-3 .mb:is(.mb-t,.mb-l1,.mb-l2,.mb-in,.mb-in2,.mb-tb),
+.tkmock.lv-4 .mb{opacity:1;transform:none}
+@media (max-width:560px){.tkdlg{grid-template-columns:1fr}.tkmock{justify-self:center}}
+/* campos que aparecem conforme o nível */
+.tkcampos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.tkcampo{display:grid;gap:4px;font-size:13px;font-weight:500}
+.tkcampo textarea{min-height:76px}.tkcampo textarea.mono{font-family:var(--mono);font-size:12.5px}
+.tkcampo.on{animation:tkCampo .34s cubic-bezier(.2,.8,.2,1)}
+@keyframes tkCampo{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (max-width:640px){.tkcampos{grid-template-columns:1fr}}
+.tkctxdet{display:grid;gap:12px;margin-top:14px}
+.tknew .tknewf{gap:8px;flex-wrap:wrap}
+/* lista x kanban e "editar sprint" */
+.tkvbar{margin-bottom:12px;gap:8px}
+.tkkan{margin-top:12px}.tkkan .kcol{min-width:220px}
+.tkkc.tkref{opacity:.85}
+/* para modelagem: uso interno */
+.tksec.tkpm{border:1px dashed color-mix(in srgb,var(--accent) 55%,transparent);border-radius:12px;padding:12px 14px;background:color-mix(in srgb,var(--accent) 5%,transparent)}
+.tkint{background:var(--accent-soft);color:var(--accent);font-size:11px}
+.tkeslist{display:grid;gap:6px;padding-left:20px;margin:4px 0}
+.tkeslist li .pill{font-size:11px}
+.tkes-criar .pill{background:var(--ok-soft);color:var(--ok)}.tkes-editar .pill{background:var(--accent-soft);color:var(--accent)}
+@media (prefers-reduced-motion:reduce){.tkmock .mb{transition:none}.tkcampo.on{animation:none}}

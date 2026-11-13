@@ -1,0 +1,67 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Sprintboard</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/motion.css">
+<link rel="stylesheet" href="css/keeper.css">
+<link rel="stylesheet" href="css/tester.css">
+<link rel="stylesheet" href="css/thinker.css">
+<link rel="stylesheet" href="css/ai-anim.css">
+<link rel="stylesheet" href="css/patchnotes.css">
+<link rel="stylesheet" href="css/tema-caramelo.css">
+<script>try{var k=localStorage.getItem('sb-skin'),m=localStorage.getItem('sb-mode'),r=document.documentElement;if(k&&k!=='padrao')r.dataset.skin=k;if(m==='claro')r.dataset.theme='light';else if(m==='escuro')r.dataset.theme='dark'}catch(e){}</script>
+
+<header class="top"><div class="wrap topin">
+  <button class="brand" id="homeBtn" title="Início"><i></i>Sprintboard</button>
+  <nav class="crumbs" id="crumbs" aria-label="Caminho"></nav>
+  <select id="sprintSel" aria-label="Sprint" hidden></select>
+  <button class="sidetoggle" id="sideTg" aria-expanded="false" aria-controls="side">Atividades</button>
+  <div class="tabs" id="tabsWrap" role="group" aria-label="Visão da atividade">
+    <button id="tabLer" aria-pressed="true">Resumo</button>
+    <button id="tabReg" aria-pressed="false">Testes</button>
+  </div>
+  <div class="grow"></div>
+  <button class="filab" id="filaBtn" hidden aria-label="Fila da noite" title="Fila da noite"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg><b id="filaN">0</b></button><button class="who" id="whoami" aria-haspopup="dialog" aria-expanded="false" aria-controls="prof">Conectando…</button>
+</div><nav class="wrap apptabs" id="appTabs" role="tablist" aria-label="Aplicações abertas" hidden></nav></header>
+
+<section class="screen wrap" id="screen"><div class="scrin"><div class="sk" style="height:64px;max-width:420px"></div><div class="mods"><div class="sk" style="height:220px"></div><div class="sk" style="height:220px"></div><div class="sk" style="height:220px"></div></div></div></section>
+<main class="wrap">
+  <aside class="list" id="side" aria-busy="true"><div class="sk" style="height:118px"></div><div class="sk" style="height:44px"></div><div class="sk" style="height:44px"></div><div class="sk" style="height:44px"></div><div class="sk" style="height:44px"></div></aside>
+  <section class="pane" id="pane" aria-busy="true"><div class="sk" style="height:170px"></div><div class="sk" style="height:56px"></div><div class="sk" style="height:320px"></div></section>
+</main>
+<button class="aifab" id="aiFab" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg>Assistente de testes</button>
+<aside class="ai" id="ai" hidden aria-label="Assistente de testes">
+  <div class="aihead"><div class="row"><b class="grow">Assistente de testes</b><button class="ghost" id="aiClear">Nova conversa</button><button id="aiClose" aria-label="Fechar">Fechar</button></div><div class="ctx" id="aiCtx"></div></div>
+  <div class="ailog" id="aiLog"></div>
+  <div class="aifoot">
+    <div class="aichips" id="aiChips"></div>
+    <label class="small muted" for="aiIn">Descreva o que está testando ou o erro. Cole prints com Ctrl+V.</label>
+    <textarea id="aiIn" placeholder="Ex.: mandei a abertura para Rondonópolis e voltou 4002 e-mail_usuario desconhecido"></textarea>
+    <div class="row"><label class="drop" style="padding:4px 8px">Anexar log, XRebel, PDF ou print <input type="file" id="aiFile" multiple style="max-width:180px"></label><span class="grow"></span><button class="pri" id="aiSend">Enviar</button></div>
+  </div>
+</aside>
+<div id="ask" class="ask" hidden role="dialog" aria-modal="true" aria-labelledby="askQ"></div>
+<div id="busy" class="busy" hidden role="status" aria-live="polite"><span class="spin"></span><span id="busyMsg"></span></div>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<div id="vtoast" class="toast vt" role="status" aria-live="polite" hidden></div>
+<div id="modal" class="modal" hidden></div>
+<div id="prof" class="prof" role="dialog" aria-label="Perfil" hidden></div>
+
+<script src="js/core.js"></script>
+<script src="js/home-kanban.js"></script>
+<script src="js/keeper.js"></script>
+<script src="js/tester.js"></script>
+<script src="js/google.js"></script>
+<script src="js/patchnotes.js"></script>
+<script src="js/thinker.js"></script>
+<script src="js/thinker-plus.js"></script>
+<script src="js/ai-ui.js"></script>
+<script src="js/fila-tema.js"></script>
+
+
+
+
+</body></html>
+</body></html>
